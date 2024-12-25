@@ -33,8 +33,5 @@ fReverser()
 
 --[[
 KNOWN BUGS:
-1. poppedChoice = string.gsub(choice, Indiced, " ") Does not save each of the letters as their own separate instance, but rather every instance of a vowel as one single instance. AKA Hello World would have 1 o and 1 e by that standard.
-2. the fReverser() function doesn't reverse shit. Fix it.
-3. string.insert() function works circumstantially. Update it.
-4. Make the script shorter. It is too inefficient for something this simple.
+None to speak of right now
 ---]]
