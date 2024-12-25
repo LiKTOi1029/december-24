@@ -1,32 +1,32 @@
 choice = "Hello world!"
 tVowels = {"a","e","i","o","u","A","E","I","O","U"}
+tStringIndiced = {}
 tReadVowels = {}
 tPositions = {}
-
+--[[
 function string.insert(position, string1, string2)
-  return string1:sub(1, position-1) .. string2 .. string1:sub(position)
+	return string1:sub(1, position-1) .. string2 .. string1:sub(position)
 end
+--]]
 
-for num0 = 1, #choice do
-    local Indiced = string.sub(choice, num0, num0)
-    for num1 = 1, #tVowels do
-        if Indiced == tVowels[num1] then
-            table.insert(tReadVowels, Indiced)
-            table.insert(tPositions, num1)
-            poppedChoice = string.gsub(choice, Indiced, " ")
-        end
-    end
-	print(poppedChoice)
+function string.rinsert(position, sourceString, replacementString)
+	local subString = string.sub(sourceString, position, position)
+	local modifiedSource = string.gsub(subString, substring, replacementString)
+	return modifiedSource
 end
-
 function fReverser()
-	local newChoice = poppedChoice
-    for num3 = #tPositions, 1, -1 do
-		if tReadVowels[tPositions[num3]] then
-			string.insert(tPositions[num3], newChoice, tReadVowels[tPositions[num3]])
+	local Indiced = string.sub(choice, num0, num0)
+	for num0 = 1, #choice do
+		table.insert(tStringIndiced, Indiced)
+	end
+	for num1 = #tStringIndiced, 1, -1 do
+		for num2 = 1, #tVowels do
+			if tStringIndiced[num1] == tVowels[num2] then
+				table.insert(tPositions, num1)
+				table.insert(tReadVowels, tStringIndiced[num1])
+			end
 		end
 	end
-	print(tostring(choice).." | "..tostring(poppedChoice).." | "..tostring(newChoice).." | "..tostring(#tPositions)..","..tostring(tReadVowels[tPositions[0]]))
 end
 
 fReverser()
